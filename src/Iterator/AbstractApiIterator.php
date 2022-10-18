@@ -60,6 +60,7 @@ abstract class AbstractApiIterator extends Api implements Iterator, Countable
      *
      * @return integer|string
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->currentOffset;
@@ -98,7 +99,7 @@ abstract class AbstractApiIterator extends Api implements Iterator, Countable
 
     /**
      * Checks if the current offset exists in the cache.
-     *
+    *
      * @return bool
      */
     public final function valid(): bool
@@ -111,7 +112,7 @@ abstract class AbstractApiIterator extends Api implements Iterator, Countable
      *
      * @return void
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->currentOffset = 0;
     }

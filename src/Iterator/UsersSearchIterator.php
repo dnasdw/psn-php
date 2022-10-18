@@ -2,7 +2,6 @@
 
 namespace Tustin\PlayStation\Iterator;
 
-use Tustin\PlayStation;
 use InvalidArgumentException;
 use Tustin\PlayStation\Model\User;
 use Tustin\PlayStation\Factory\UsersFactory;
@@ -76,6 +75,7 @@ class UsersSearchIterator extends AbstractApiIterator
         $this->update($domainResponse->totalResultCount, $domainResponse->results, $domainResponse->next ?? "");
     }
 
+    #[\ReturnTypeWillChange]
     public function current()
     {
         $socialMetadata = $this->getFromOffset($this->currentOffset)->socialMetadata;

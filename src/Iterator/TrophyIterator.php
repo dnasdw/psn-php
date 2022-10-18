@@ -49,6 +49,7 @@ class TrophyIterator extends AbstractApiIterator
         $this->update($results->totalItemCount, $results->trophies);
     }
 
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return Trophy::fromObject(
